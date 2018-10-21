@@ -1,3 +1,4 @@
 class Tag < ApplicationRecord
-  belongs_to :link
+  has_and_belongs_to_many :links
+  belongs_to :user
 end
