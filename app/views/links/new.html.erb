@@ -1,5 +1,6 @@
 <%= simple_form_for @link do |f| %>
   <%= f.input :title %>
   <%= f.input :url %>
+  <%= f.collection_select :id, Tag.order(:title), :id, :title, prompt: true %>
   <%= f.button :submit %>
 <% end %>
