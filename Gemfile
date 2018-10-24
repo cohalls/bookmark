@@ -53,3 +53,4 @@ gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 gem 'simple_form'
 gem 'bootstrap', '~> 4.1.3'
 gem 'devise'
+gem 'select2-rails'
