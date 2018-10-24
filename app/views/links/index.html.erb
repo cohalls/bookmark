@@ -1,9 +1,10 @@
-<div class="text-center">
-  <h1>Links</h1>
-<% @links.each do |link| %>
-  <h4><%= link.title %></h4>
-  <h6><%= link.url %></h6>
-  <%= link_to 'Edit', edit_link_path(link) %>
-  <%= link_to 'Delete', link_path(link), method: :delete , data: { confirm: 'Are you sure?' } %>
-<% end %>
+<div class="d-flex flex-row justify-content-around flex-wrap">
+  <% @links.each do |link| %>
+    <div class="card text-center">
+      <h3><%= link.title %></h3>
+      <p><%= link.url %></p>
+      <%= link_to 'Edit', edit_link_path(link) %>
+      <%= link_to 'Delete', link_path(link), method: :delete , data: { confirm: 'Are you sure?' } %>
+      </div>
+      <% end %>
 </div>
