@@ -8,7 +8,7 @@ class TagsController < ApplicationController
   end
 
   def create
-    @tag = Tag.create(tag_params)
+    @tag = Tag.create!(tag_params.merge!(user: current_user))
     redirect_to links_path
   end
 
