@@ -18,10 +18,16 @@ class LinksController < ApplicationController
     array_of_tags = []
     link_parameters[:tags].each do |tag_id|
       next if tag_id.empty?
-      array_of_tags.push(Tag.find(tag_id))
+      # Why is the Tag ID empty?
+      split_id = tag_id.split("::")
+        if split_id.length > 1
+          array_of_tags.push(Tag.find(split_id[0]))
+        else
+          array_of_tags.push(Tag.create!(title: split_id[0], user: current_user))
+        end
     end
     link_parameters[:tags] = array_of_tags
-    @link = Link.create(link_parameters.merge!(user: current_user))
+    @link = Link.create!(link_parameters.merge!(user: current_user))
     redirect_to links_path
   end
 

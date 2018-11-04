@@ -1,14 +1,6 @@
-<script>
-$(document).ready(function() {
-    $('.tag-selector').select2( {
-      tags: true,
-    });
-});
-</script>
-
 <%= simple_form_for @link do |f| %>
   <%= f.input :title %>
   <%= f.input :url %>
-  <%= f.collection_select(:tags, Tag.order(:title), :id, :title, {prompt: true}, {class: "tag-selector, form-control", type: "text", multiple: "multiple"}) %>
+  <%= f.collection_select(:tags, Tag.order(:title), :formatted_id, :title, {prompt: true}, {class: "tag-selector form-control", multiple: "multiple"}) %>
   <%= f.button :submit %>
 <% end %>
