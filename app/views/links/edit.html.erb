@@ -1,5 +1,6 @@
 <%= simple_form_for @link do |f| %>
   <%= f.input :title %>
   <%= f.input :url %>
+  <%= f.collection_select(:tags, Tag.order(:title), :formatted_id, :title, {prompt: true, selected: @link.tags.map(&:formatted_id)}, {class: "tag-selector form-control", multiple: "multiple"}) %>
   <%= f.button :submit %>
 <% end %>

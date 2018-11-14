@@ -12,6 +12,16 @@ class TagsController < ApplicationController
     redirect_to links_path
   end
 
+  def edit
+    @tag = Tag.find(params[:id])
+  end
+
+  def update
+    @tag = Tag.find((params[:id]))
+    @tag.update(tag_params)
+    redirect_to tag_path(@tag)
+  end
+
   def destroy
     @tag = Tag.destroy(params[:id])
     redirect_to tags_path

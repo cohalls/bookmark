@@ -5,4 +5,5 @@ class Tag < ApplicationRecord
   def formatted_id
     return "#{self.id}::#{self.title}"
   end
+
 end
