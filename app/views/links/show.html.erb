@@ -1,7 +1,9 @@
-<h1>Link </h1>
-
-<h3> <%= @link.title %></h3>
-<h3> <%= @link.url %> </h3>
-
-
+<div class="d-flex flex-row justify-content-around flex-wrap">
+  <div class="card text-center">
+    <h3> <%= @link.title %></h3>
+    <p> <%= @link.url %> </p>
+    <% @link.tags.each do |tag| %>
+      <div class="tag"><span class="tag-bg"> <%= tag.title %> </span> </div>
+    <% end %>
 <%= link_to "Show All Links", links_path %>
+</div>
