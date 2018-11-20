@@ -2,7 +2,7 @@
   <div class="card text-center">
     <h3> <%= @link.title %></h3>
     <p> <%= @link.url %> </p>
-    <img src='<%=@link.image_path %>'/>
+    <img src='<%=@link.image_path %>' class="image"/>
     <% @link.tags.each do |tag| %>
       <div class="tag"><span class="tag-bg"> <%= tag.title %> </span> </div>
     <% end %>
