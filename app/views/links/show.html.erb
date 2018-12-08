@@ -1,8 +1,10 @@
-<div class="d-flex flex-row justify-content-around flex-wrap">
-  <div class="card text-center">
-    <h3> <%= @link.title %></h3>
-    <p><a href="<%= @link.url %>"><%= @link.url %></a> <%= image_tag "open_link_icon.png", class:"icon" %></p>
-    <img src='<%=@link.image_path %>' class="image"/>
+  <div class="d-flex flex-row flex-wrap justify-content-center">
+    <div class="float-left">
+      <img src='<%=@link.image_path %>' class="image"/>
+    </div>
+    <div class="large-card text-center">
+      <h3> <%= @link.title %></h3>
+      <p><a href="<%= @link.url %>"><%= @link.url %></a> <%= image_tag "open_link_icon.png", class:"icon" %></p>
     <p><%=@link.description %></p>
     <% @link.tags.each do |tag| %>
       <div class="tag"><span class="tag-bg"> <%= tag.title %> </span> </div>

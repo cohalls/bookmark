@@ -36,6 +36,7 @@ class LinksController < ApplicationController
   private
 
   def link_params
+    binding.pry
     params.require(:link).permit(:title, :url, :tags => [])
   end
 end
