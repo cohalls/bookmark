@@ -1,4 +1,5 @@
 <div class="d-flex flex-row justify-content-around flex-wrap">
+  <%= flash[:error] %>
   <% @links.each do |link| %>
     <div class="card text-center">
       <h3><%= link_to link.title, link_path(link) %></h3>

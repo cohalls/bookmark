@@ -10,11 +10,15 @@ class Link < ApplicationRecord
   validates :url, format: { with: URI::regexp(['http', 'https']) }
 
   def crawl_page
-    page = LinkThumbnailer.generate(self.url)
-    image = page.images.first.src.to_s
-    self.image_path = image
-    description = page.description
-    self.description = description
+    begin
+      page = LinkThumbnailer.generate(self.url)
+      image = page.images.first.src.to_s
+      self.image_path = image
+      description = page.description
+      self.description = description
+    rescue LinkThumbnailer::Exceptions => e
+      # do nothing
+    end
   end
 
   def format_url

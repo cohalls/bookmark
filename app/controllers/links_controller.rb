@@ -14,8 +14,13 @@ class LinksController < ApplicationController
   end
 
   def create
-    @link = Link.create!(Link.check_tags(link_params, current_user).merge!(user: current_user))
-    redirect_to links_path
+    @link = Link.create(Link.check_tags(link_params, current_user).merge!(user: current_user))
+    if @link.invalid?
+      flash[:error] = 'Please sign in before creating a Link'
+      redirect_to new_link_path
+    else
+      redirect_to links_path
+    end
   end
 
   def edit
@@ -36,7 +41,6 @@ class LinksController < ApplicationController
   private
 
   def link_params
-    binding.pry
     params.require(:link).permit(:title, :url, :tags => [])
   end
 end
