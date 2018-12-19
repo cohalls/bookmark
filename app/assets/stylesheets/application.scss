@@ -7,14 +7,13 @@
 
 .card {
   border: 1px solid black;
-  box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
   width: 300px;
   margin-top: 25px;
+  padding-bottom: 25px;
 }
 
 .large-card {
   border: 1px solid black;
-  box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
   width: 60%;
   margin-top: 25px;
   padding-top: 25px;
@@ -31,9 +30,9 @@
 .image {
   width: 300px;
   height: auto;
-  border: 1px solid black;
-  box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
   margin-top: 25px;
+  padding-left: 5px;
+  padding-right: 5px;
 }
 
 .icon {

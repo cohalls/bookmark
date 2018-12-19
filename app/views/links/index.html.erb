@@ -3,7 +3,7 @@
   <% @links.each do |link| %>
     <div class="card text-center">
       <h3><%= link_to link.title, link_path(link) %></h3>
-      <p><%= link.url %></p>
+      <p><a href="<%= link.url %>"><%= link.url %></a> <%= image_tag "open_link_icon.png", class:"icon" %></p>
       <% link.tags.each do |tag| %>
       <div class="tag"><span class="tag-bg"> <%= tag.title %> </span> </div>
         <% end %>
