@@ -10,8 +10,16 @@ RSpec.describe LinksController, type: :controller do
 
   describe "links#create" do
     it "should allow new links to be created" do
-      post :create, params: {link: {title: "Bookmark Title"}}
-      expect(response).to have_http_status(:success)
+      user = FactoryBot.create(:user)
+      sign_in user
+
+      post :create, params: {
+        link: { title: "Bookmark Title",
+                url: "www.bookmark.com",
+                tags: ['']
+            }
+          }
+      expect(response).to redirect_to links_path
       expect(Link.last.title).to eq("Bookmark Title")
     end
   end

@@ -39,6 +39,7 @@ group :development, :test do
   gem 'pry'
   gem 'pry-rails'
   gem 'rspec-rails', '~> 3.5'
+  gem 'factory_bot_rails'
 end
 
 group :development do
@@ -58,4 +59,3 @@ gem 'bootstrap', '~> 4.1.3'
 gem 'devise'
 gem 'select2-rails', '~> 4.0.3'
 gem 'link_thumbnailer'
-gem 'factory_bot'
