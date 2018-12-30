@@ -41,6 +41,8 @@ class LinksController < ApplicationController
   private
 
   def link_params
-    params.require(:link).permit(:title, :url, :tags => [])
+    params.require(:link).permit(:title, :url,
+      tag_attributes: [ :id, :title]
+    )
   end
 end

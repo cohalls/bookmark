@@ -1,7 +1,8 @@
 require 'link_thumbnailer'
 
 class Link < ApplicationRecord
-  has_and_belongs_to_many :tags
+  has_many :variants
+  accepts_nested_attributes_for :tag
   belongs_to :user
 
   before_validation :format_url

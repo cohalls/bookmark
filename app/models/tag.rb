@@ -1,5 +1,5 @@
 class Tag < ApplicationRecord
-  has_and_belongs_to_many :links
+  belongs_to :links
   belongs_to :user
 
   def formatted_id
