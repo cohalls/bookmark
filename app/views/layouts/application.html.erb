@@ -30,9 +30,11 @@
           :class => "btn btn-sm btn-outline-secondary", :method => :get %>
 
       <div class="ml-auto">
-        <button>Search Tags</button>
-        <input class="search"/>
-        </div>
+        <form method="post" action="/search">
+          <button>Search Tags</button>
+          <input class="search" id="tag"/>
+        </form>
+      </div>
 
     </nav>
 <%= yield %>

@@ -4,4 +4,5 @@ Rails.application.routes.draw do
   root 'links#index'
   resources :tags
   resources :links
+  post '/search', to: 'search#search'
 end
