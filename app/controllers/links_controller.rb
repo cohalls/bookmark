@@ -2,7 +2,7 @@ class LinksController < ApplicationController
 
 
   def index
-    @links = Link.all
+    @links = Link.where(user: current_user)
   end
 
   def show
